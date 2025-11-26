@@ -1,0 +1,16 @@
+{
+  "sbomId": "urn:uuid:9b6c4d1b-9bf2-4d4f-9e38-78f32f1f1bc1",
+  "artifactName": "demo-artifact",
+  "artifactVersion": "1.0.0",
+  "artifactHash": "75d6c45b51b1c1cfa9df311b6763a740d0bc1bb9eae1fbb9f65d9d27883f6e90",
+  "components": [
+    {
+      "name": "openssl",
+      "version": "3.2.0",
+      "licenses": ["Apache-2.0"],
+      "cves": []
+    }
+  ],
+  "generatedAt": "2025-11-24T10:45:00Z"
+}
+
