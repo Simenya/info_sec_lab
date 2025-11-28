@@ -1,0 +1,9 @@
+node_modules
+.env
+coverage
+hardhat-network.json
+artifacts
+cache
+*.exe
+*.zip
+*.pdf

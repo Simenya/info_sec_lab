@@ -1,0 +1,43 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "name": "Antigravity_Engine",
+      "version": "1.11.3"
+    }
+  },
+  "components": [
+    {
+      "name": "physics-core",
+      "version": "4.2.0",
+      "type": "library",
+      "purl": "pkg:pypi/physics-core@4.2.0"
+    },
+    {
+      "name": "numpy",
+      "version": "1.24.3",
+      "type": "library",
+      "purl": "pkg:pypi/numpy@1.24.3"
+    },
+    {
+      "name": "rendering-engine-3d",
+      "version": "2.0.1",
+      "type": "library",
+      "purl": "pkg:npm/render-3d@2.0.1"
+    },
+    {
+      "name": "gravity-mock",
+      "version": "0.9.5-beta",
+      "type": "library",
+      "purl": "pkg:generic/gravity-mock@0.9.5"
+    },
+    {
+      "name": "secure-logger",
+      "version": "3.1.1",
+      "type": "library",
+      "purl": "pkg:npm/secure-logger@3.1.1"
+    }
+  ]
+}
