@@ -95,6 +95,25 @@ This script ingests the demo payloads in `sbom-demo/` and calls `publishRelease`
 
 > Tip: if you want to see transactions inside the Ganache GUI, make sure the network is running before executing `hardhat run … --network ganache`. Hardhat defaults to an in-memory chain unless you pass `--network`, so deployments/tests will not show up in Ganache unless you target it explicitly.
 
+## React UI (frontend)
+
+The `frontend/` folder hosts a Vite + React dashboard that exposes:
+- **User view:** drop an artifact, the UI hashes it locally, and calls `getRelease` via the Ganache RPC to confirm status.
+- **Maintainer console:** connect your MetaMask (Ganache) wallet to publish, verify, or revoke releases directly from the browser. Release listings are fetched from `ReleasePublished` events.
+- **How-to page:** step-by-step instructions + required env vars.
+
+### Setup
+
+```shell
+cd frontend
+npm install
+echo VITE_RELEASE_CONTRACT=0x... >> .env
+echo VITE_GANACHE_RPC_URL=http://127.0.0.1:7545 >> .env
+npm run dev
+```
+
+The UI expects the contracts from this repo (preferably the `RevokeRelease` address exported by `npm run deploy:ganache`). MetaMask should point at the same Ganache network/private key that Hardhat uses so maintainer actions succeed.
+
 ## Next steps for the React + SBOM tooling
 
 - **React client**: use the ABI from `artifacts/contracts/sbom/RevokeRelease.sol/RevokeRelease.json` and read `getRelease(artifactId)` to render maintainer/verification state.  

@@ -1,0 +1,141 @@
+[
+  {
+    "inputs": [
+      { "internalType": "address[]", "name": "maintainers", "type": "address[]" },
+      { "internalType": "address[]", "name": "verifiers", "type": "address[]" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [{ "internalType": "bytes32", "name": "artifactId", "type": "bytes32" }],
+    "name": "getRelease",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "maintainer", "type": "address" },
+          { "internalType": "bytes32", "name": "artifactHash", "type": "bytes32" },
+          { "internalType": "bytes32", "name": "sbomHash", "type": "bytes32" },
+          { "internalType": "uint8", "name": "status", "type": "uint8" },
+          { "internalType": "uint256", "name": "publishedAt", "type": "uint256" },
+          { "internalType": "uint256", "name": "verifiedAt", "type": "uint256" },
+          { "internalType": "uint256", "name": "revokedAt", "type": "uint256" },
+          { "internalType": "string", "name": "lastVerificationNote", "type": "string" }
+        ],
+        "internalType": "struct PublishRelease.Release",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "artifactId", "type": "bytes32" },
+      { "internalType": "bytes32", "name": "artifactHash", "type": "bytes32" },
+      { "internalType": "bytes32", "name": "sbomHash", "type": "bytes32" }
+    ],
+    "name": "publishRelease",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "maintainer", "type": "address" },
+          { "internalType": "bytes32", "name": "artifactHash", "type": "bytes32" },
+          { "internalType": "bytes32", "name": "sbomHash", "type": "bytes32" },
+          { "internalType": "uint8", "name": "status", "type": "uint8" },
+          { "internalType": "uint256", "name": "publishedAt", "type": "uint256" },
+          { "internalType": "uint256", "name": "verifiedAt", "type": "uint256" },
+          { "internalType": "uint256", "name": "revokedAt", "type": "uint256" },
+          { "internalType": "string", "name": "lastVerificationNote", "type": "string" }
+        ],
+        "internalType": "struct PublishRelease.Release",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "artifactId", "type": "bytes32" },
+      { "internalType": "string", "name": "reason", "type": "string" }
+    ],
+    "name": "revokeRelease",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "maintainer", "type": "address" },
+          { "internalType": "bytes32", "name": "artifactHash", "type": "bytes32" },
+          { "internalType": "bytes32", "name": "sbomHash", "type": "bytes32" },
+          { "internalType": "uint8", "name": "status", "type": "uint8" },
+          { "internalType": "uint256", "name": "publishedAt", "type": "uint256" },
+          { "internalType": "uint256", "name": "verifiedAt", "type": "uint256" },
+          { "internalType": "uint256", "name": "revokedAt", "type": "uint256" },
+          { "internalType": "string", "name": "lastVerificationNote", "type": "string" }
+        ],
+        "internalType": "struct PublishRelease.Release",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "artifactId", "type": "bytes32" },
+      { "internalType": "string", "name": "note", "type": "string" }
+    ],
+    "name": "verifyRelease",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "maintainer", "type": "address" },
+          { "internalType": "bytes32", "name": "artifactHash", "type": "bytes32" },
+          { "internalType": "bytes32", "name": "sbomHash", "type": "bytes32" },
+          { "internalType": "uint8", "name": "status", "type": "uint8" },
+          { "internalType": "uint256", "name": "publishedAt", "type": "uint256" },
+          { "internalType": "uint256", "name": "verifiedAt", "type": "uint256" },
+          { "internalType": "uint256", "name": "revokedAt", "type": "uint256" },
+          { "internalType": "string", "name": "lastVerificationNote", "type": "string" }
+        ],
+        "internalType": "struct PublishRelease.Release",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "indexed": true, "internalType": "bytes32", "name": "artifactId", "type": "bytes32" },
+      { "indexed": true, "internalType": "address", "name": "maintainer", "type": "address" },
+      { "indexed": false, "internalType": "bytes32", "name": "artifactHash", "type": "bytes32" },
+      { "indexed": false, "internalType": "bytes32", "name": "sbomHash", "type": "bytes32" }
+    ],
+    "name": "ReleasePublished",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "indexed": true, "internalType": "bytes32", "name": "artifactId", "type": "bytes32" },
+      { "indexed": true, "internalType": "address", "name": "verifier", "type": "address" },
+      { "indexed": false, "internalType": "string", "name": "note", "type": "string" }
+    ],
+    "name": "ReleaseVerified",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "indexed": true, "internalType": "bytes32", "name": "artifactId", "type": "bytes32" },
+      { "indexed": true, "internalType": "address", "name": "actor", "type": "address" },
+      { "indexed": false, "internalType": "string", "name": "reason", "type": "string" }
+    ],
+    "name": "ReleaseRevoked",
+    "type": "event"
+  }
+]
+
