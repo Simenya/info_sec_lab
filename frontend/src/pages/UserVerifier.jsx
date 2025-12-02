@@ -85,7 +85,7 @@ const UserVerifier = ({ contractCtx }) => {
   );
 
   return (
-    <section className="app-grid">
+    <><section className="app-grid">
       <div className="panel panel-left">
         <div className="panel-left-decor" aria-hidden="true">
           <img src={accentOne} alt="" />
@@ -113,17 +113,17 @@ const UserVerifier = ({ contractCtx }) => {
           </label>
 
           <div className="button-row">
-                  <button
-          type="button"
-          disabled={!selectedFile || status === "loading"}
-          onClick={isResult ? reset : verifyFile}
-          style={{ width: "100%" }}
-        >
+            <button
+              type="button"
+              disabled={!selectedFile || status === "loading"}
+              onClick={isResult ? reset : verifyFile}
+              style={{ width: "100%" }}
+            >
               {isResult ? "Verify another file" : status === "loading" ? "Verifying…" : "Verify"}
             </button>
             {/* <button type="button" className="ghost-btn" onClick={contractCtx.refreshReleases}>
-              Refresh catalog
-            </button> */}
+      Refresh catalog
+    </button> */}
           </div>
 
           {error && (
@@ -147,18 +147,18 @@ const UserVerifier = ({ contractCtx }) => {
               {status === "verified" && "Artifact verified on-chain."}
             </p>
             {/* {hash && (
-              <div className="hash-chip">
-                SHA-256: <code>{hash.slice(0, 40)}…</code>
-              </div>
-            )} */}
+      <div className="hash-chip">
+        SHA-256: <code>{hash.slice(0, 40)}…</code>
+      </div>
+    )} */}
             {releaseDetails && (
-              <div className="verified-card"> 
-                
+              <div className="verified-card">
+
                 <div className="verified-row">
                   <span>Maintainer</span>
                   <code>{releaseDetails.maintainer}</code>
                 </div>
-                
+
                 <div className="verified-row">
                   <span>Artifact ID</span>
                   <code>{releaseDetails.artifactId}</code>
@@ -179,7 +179,53 @@ const UserVerifier = ({ contractCtx }) => {
           </div>
         </div>
       </div>
-    </section>
+    </section><section className="how-it-works">
+        <header className="how-it-works-header">
+          <p className="eyebrow">Verification Process</p>
+          <h2>How It Works</h2>
+        </header>
+
+        <div className="steps-grid">
+          <div className="step-card">
+            <div className="step-number">1</div>
+            <h3>Upload Your File</h3>
+            <p>Upload your downloaded software file to begin the verification process.</p>
+          </div>
+
+          <div className="step-card">
+            <div className="step-number">2</div>
+            <h3>Calculate Hash</h3>
+            <p>We calculate a cryptographic hash of your file using SHA-256 algorithm.</p>
+          </div>
+
+          <div className="step-card">
+            <div className="step-number">3</div>
+            <h3>Compare Registry</h3>
+            <p>We compare it against the blockchain registry to verify authenticity.</p>
+          </div>
+
+          <div className="step-card">
+            <div className="step-number">4</div>
+            <h3>Get Results</h3>
+            <p>You get instant verification results showing if your artifact is authentic.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section className="tech-badge">
+      <div className="tech-badge-content">
+        <p className="tech-badge-title">Powered by Blockchain Technology</p>
+        <div className="tech-badge-features">
+          <span>Secure</span>
+          <span className="separator">•</span>
+          <span>Decentralized</span>
+          <span className="separator">•</span>
+          <span>Transparent</span>
+          <span className="separator">•</span>
+          <span>Immutable</span>
+        </div>
+      </div>
+    </section></>
   );
 };
 
